@@ -42,6 +42,18 @@ export default function Sidebar() {
         >
           Brands
         </Link>
+        <Link
+          href="/admin/feedback"
+          className="block px-4 py-2 rounded hover:bg-gray-700"
+        >
+          Feedback
+        </Link>
+        <Link
+          href="/admin/enquiry"
+          className="block px-4 py-2 rounded hover:bg-gray-700"
+        >
+          Enquiry
+        </Link>
 
         {/* <Link href="/admin/pages" className="block px-4 py-2 rounded hover:bg-gray-700">
             Pages

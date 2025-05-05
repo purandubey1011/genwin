@@ -49,12 +49,12 @@ const Navbar = () => {
 
             <div className='flex  items-center '>
             <Image src={icon} alt="mobile.icon"/>
-              <span className='whitespace-nowrap text-12 font-[500] gap-1'>+91-9810331626</span>
+              <span className='whitespace-nowrap text-12 font-[500] gap-1'>+91-9717121626</span>
             
             </div>
             <div className='flex items-center '>
             <Image src={icons} alt="gmail.icon"/> 
-            <span className='whitespace-nowrap text-12 w-10 h-auto  font-[500] ml-1'>Enquiry@genwin.com</span>
+            <span className='whitespace-nowrap text-12 w-10 h-auto  font-[500] ml-1'> contact@genwin-auto.com </span>
           </div>
         </div>
         </div>
@@ -153,7 +153,7 @@ const Navbar = () => {
           </li>
           <li
             className={`relative group `}
-            onClick={() => setisOpen(!isOpened)}
+            onClick={() => setisOpened(!isOpened)}
           >
                    <div className="relative inline-block"> {/* Container for positioning dropdown */}
             <button
@@ -196,7 +196,7 @@ const Navbar = () => {
           <PhoneRedIcon className="h-6 w-6 text-18 font-[500]" />
           <div className='flex flex-col'>
             <span className='text-E52D38'>Contact Us For More Info:</span> 
-            <span className="ms-1 text-16 font-[500]">+91-9810331626</span>
+            <span className="ms-1 text-16 font-[500]">+91-9717121626</span>
           </div>
         </div>
       </div>

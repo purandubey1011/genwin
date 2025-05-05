@@ -9,8 +9,8 @@ import Location from '@/components/Location';
 import Contactphone from "@/components/Contactphone";
 
 const platypi = Platypi({
-  weight: ['400','500','600'], 
-  preload: false,
+    weight: ['400', '500', '600'],
+    preload: false,
 });
 
 
@@ -28,17 +28,17 @@ export default function ContactUsPage() {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true)
-        const {name,email,phone,subject,message} = formData
+        const { name, email, phone, subject, message } = formData
         const response = await fetch("/api/feedback", {
-            headers:{
+            headers: {
                 application: "application/json",
             },
             method: "POST",
-            body: JSON.stringify({name,email,phone,subject,message}),
+            body: JSON.stringify({ name, email, phone, subject, message }),
         })
         setLoading(false)
         setFormData({
@@ -47,10 +47,10 @@ export default function ContactUsPage() {
             phone: "",
             subject: "",
             message: "",
-        })        
+        })
         // Add form submission logic here
     };
-    
+
     return (
         <div>
             {/* Section 1: Banner */}
@@ -130,64 +130,64 @@ export default function ContactUsPage() {
                                 </div>
                             </a>
                         </div>
-                    </div>                   
+                    </div>
 
                     {/* Form Column */}
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <form className="space-y-6" onSubmit={handleSubmit}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-181818 font-[500] text-16 mb-2">Name</label>
                                     <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Your Name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    className="border border-gray-300 rounded-md p-3 w-full text-14 font-[500]"
+                                        type="text"
+                                        name="name"
+                                        placeholder="Your Name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        className="border border-gray-300 rounded-md p-3 w-full text-14 font-[500]"
                                     />
                                 </div>
 
                                 <div>
                                     <label className="block text-181818 font-[500] text-16 mb-2">Email</label>
                                     <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Your Email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    className="border border-gray-300 rounded-md p-3 w-full  text-14 font-[500]"
+                                        type="email"
+                                        name="email"
+                                        placeholder="Your Email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        className="border border-gray-300 rounded-md p-3 w-full  text-14 font-[500]"
                                     />
                                 </div>
-                                </div>
+                            </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                                 <div>
                                     <label className="block text-181818 font-[500] text-16 mb-2">Phone</label>
                                     <input
-                                    type="tel"
-                                    name="phone"
-                                    placeholder="Phone Number"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    className="border border-gray-300 rounded-md p-3 w-full  text-14 font-[500]"
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Phone Number"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        className="border border-gray-300 rounded-md p-3 w-full  text-14 font-[500]"
                                     />
                                 </div>
 
                                 <div>
                                     <label className="block text-181818 font-[500] text-16 mb-2">Subject</label>
                                     <input
-                                    type="text"
-                                    name="subject"
-                                    placeholder="Subject"
-                                    value={formData.subject}
-                                    onChange={handleChange}
-                                    className="border border-gray-300 rounded-md p-3 w-full  text-14 font-[500]"
+                                        type="text"
+                                        name="subject"
+                                        placeholder="Subject"
+                                        value={formData.subject}
+                                        onChange={handleChange}
+                                        className="border border-gray-300 rounded-md p-3 w-full  text-14 font-[500]"
                                     />
                                 </div>
-                                </div>
+                            </div>
 
-                                <div className="mt-4">
+                            <div className="mt-4">
                                 <label className="block text-181818 font-[500] text-16 mb-2">Message</label>
                                 <textarea
                                     name="message"
@@ -197,44 +197,44 @@ export default function ContactUsPage() {
                                     onChange={handleChange}
                                     className="border border-gray-300 rounded-md p-3 w-full  text-14 font-[500]"
                                 ></textarea>
-                                </div>
+                            </div>
 
-                         {loading ? (
-                            <button
-                            type="submit"
-                            className="bg-[#E52D38] text-white py-3 px-6 rounded-md w-full flex items-center justify-center gap-2"
-                            disabled
-                            >
-                            <svg
-                                className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                            >
-                                <circle
-                                className="opacity-25"
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="currentColor"
-                                strokeWidth="4"
-                                ></circle>
-                                <path
-                                className="opacity-75"
-                                fill="currentColor"
-                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                ></path>
-                            </svg>
-                            Sending...
-                            </button>
-                         ) : (
-                            <button
-                            type="submit"
-                            className="bg-[#E52D38] text-white py-3 px-6 rounded-md w-full flex items-center justify-center gap-2"
-                            >
-                            Send Message
-                            </button>
-                         )} 
+                            {loading ? (
+                                <button
+                                    type="submit"
+                                    className="bg-[#E52D38] text-white py-3 px-6 rounded-md w-full flex items-center justify-center gap-2"
+                                    disabled
+                                >
+                                    <svg
+                                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <circle
+                                            className="opacity-25"
+                                            cx="12"
+                                            cy="12"
+                                            r="10"
+                                            stroke="currentColor"
+                                            strokeWidth="4"
+                                        ></circle>
+                                        <path
+                                            className="opacity-75"
+                                            fill="currentColor"
+                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                        ></path>
+                                    </svg>
+                                    Sending...
+                                </button>
+                            ) : (
+                                <button
+                                    type="submit"
+                                    className="bg-[#E52D38] text-white py-3 px-6 rounded-md w-full flex items-center justify-center gap-2"
+                                >
+                                    Send Message
+                                </button>
+                            )}
                         </form>
                     </div>
                 </div>
@@ -245,7 +245,7 @@ export default function ContactUsPage() {
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 px-4">
                     {/* Google Map */}
                     <div className="
-                        overflow-hidden shadow-md 
+                     shadow-md 
                         rounded-t-lg  
                         sm:rounded-t-lg  
                         md:rounded-t-lg  
@@ -254,7 +254,7 @@ export default function ContactUsPage() {
                     ">
                         <iframe
                             title="Google Map"
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224357.40516303433!2d77.08996831703647!3d28.522147497380246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNoida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1743920730994!5m2!1sen!2sin" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.7589504056186!2d77.22437899678954!3d28.66693540000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfda004af6c5f%3A0x478a5ece4ee10da5!2sKashmiri%20Gate!5e0!3m2!1sen!2sin!4v1745310324437!5m2!1sen!2sin"
                             width="100%"
                             height="300"
                             style={{ border: 0 }}
@@ -268,20 +268,23 @@ export default function ContactUsPage() {
                         <h3 className={`text-30 font-[600] text-white ${platypi.className}`}>We’re here to help.</h3>
                         <p className="text-16 font-[500] text-white"></p>
                         <div className="pt-4 space-y-2">
-                            <p className="text-white text-16 font-[500] flex items-center gap-2">
-                             <strong className="w-4 h-4 flex items-center"><Location /></strong> Noida sec-2,Uttar Pradesh
+                            <p className="text-white text-16 font-[500] flex gap-2">
+                                <strong className="w-4 h-4 flex mt-1 text-xs items-center"><Location /></strong>National auto suppliers <br />
+                                    761/7A  chabi ganj
+                                    Kashmere gate <br />
+                                    Delhi -110006
                             </p>
                             <p className="text-white text-16 font-[500] flex items-center gap-2">
-                             <strong className="w-4 h-4 flex items-center"><Contactphone /></strong> +919810331626                            </p>
+                                <strong className="w-4 h-4 flex items-center"><Contactphone /></strong> +919717121626    </p>
                             <p className="text-white text-16 font-[500] flex items-center gap-2">
-                             <strong className="w-4 h-4 flex items-center"><Gmail /></strong> info@genwinauto.com
+                                <strong className="w-4 h-4 flex items-center"><Gmail /></strong>  contact@genwin-auto.com 
                             </p>
 
                         </div>
                     </div>
                 </div>
             </section>
-            <Newsletter />            
+            <Newsletter />
         </div>
     );
 }

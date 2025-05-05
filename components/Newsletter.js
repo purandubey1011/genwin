@@ -13,7 +13,6 @@ const onSubmit = async (e) => {
      method: "POST",
      body: JSON.stringify({ email }),
      })
-    console.log(response)
     }
 
 return (

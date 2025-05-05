@@ -940,7 +940,6 @@ const feedbacks = [
 export default function DetailPage(){
     const params = useParams();
     const pid = params?.id; // Extract the dynamic ID from the URL
-    console.log(pid, 3000);
     //const [product, setProduct] = useState([]);
     const [showDetails, setShowDetails] = useState(false);
     const [visibleSimilarProducts, setVisibleSimilarProducts] = useState(4);     
@@ -963,7 +962,7 @@ export default function DetailPage(){
                 },
               });
               const data = await response.json();
-              console.log(data, 30000);
+
               //setProduct(data);
               
               /* if (data) {
@@ -991,7 +990,7 @@ export default function DetailPage(){
       fetchProductData();
     }, [pid]); 
 
-    console.log(product, 40000);
+
 
     useState(() => {
       const totalRatings = reviews.length;
@@ -1102,7 +1101,6 @@ export default function DetailPage(){
       }
 
       // Example form submission logic
-      console.log('Review Submitted:', { name, email, rating, review, image });
       alert('Your review has been submitted!');
     };
 

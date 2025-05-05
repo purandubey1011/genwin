@@ -19,7 +19,7 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-const supportNumber = '+919810331626'; 
+const supportNumber = '+919717121626'; 
 const initialMessage = "Hello Genwin team! I have a question about your double-sided tapes.";
 
 

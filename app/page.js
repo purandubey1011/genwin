@@ -209,7 +209,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="py-8" style={{
-            backgroundImage: `linear-gradient(90deg, rgba(36,24,0,1) 0%, rgba(255,234,232,1) 0%, rgba(255,255,255,1) 100%)`, // Replace with your background image path
+            backgroundImage: `linear-gradient(90deg, rgba(36,24,0,1) 0%, rgba(255,234,232,1) 0%, rgba(255,255,255,1) 100%)`, 
           }}>
         <div className="max-w-7xl mx-auto p-5 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">    
           {/* First Column */}

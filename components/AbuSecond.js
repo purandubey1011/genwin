@@ -42,7 +42,7 @@ export default function AbuSecond() {
 
         {/* Second Column: Image */}
         {/* <div className="relative flex justify-center items-center max-[768px]:bg-[url('/assets/images/bg-m.webp')] bg-no-repeat left-[150px] "> */}
-        <div className=" relative max-[768px]:bg-[url('/assets/images/bg-m.webp')] bg-cover bg-left pb-10">
+        <div className=" relative hidden lg:block max-[768px]:bg-[url('/assets/images/bg-m.webp')] bg-cover bg-left pb-10">
 
 
           {/* Image */}

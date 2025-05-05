@@ -136,7 +136,7 @@ export default function AddProductPage() {
             if (!response.ok) {
                 console.error("Error:", result.error);
             } else {
-                console.log("Product added successfully:", result.message);
+
                 router.push("/admin/products");
             }
         } catch (error) {

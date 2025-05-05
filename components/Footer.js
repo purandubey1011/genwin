@@ -12,10 +12,10 @@ const Footer = () => {
       <div className=" max-w-7xl lg:max-w-0xl xl:max-w-0xl container  mx-auto   mb-3  flex flex-col lg:flex xl:flex-row lg:flex-row  justify-between  ">
         {/* Column 1: Company Info */}
 
-        <div className="ml-2 w-[310px] sm:w-[350px] md:w-[350px] lg:w-[600px] xl:w-[600px]">
+        <div className="ml-2 w-[310px] sm:w-[350px] md:w-[350px] lg:w-[800px] ">
           <Image src={logoWhite} width={191} height={55} alt="Logo Footer" />
           {/* <p className="mb-4 text-sm sm:text-base mt-5"> */}
-          <p className="text-sm sm:text-base lg:text-base xl:text-lg leading-relaxed  mt-3 lg:text-12 xl:text-12 font-[500] p-2  lg:text-justify xl:text-justify font-['Montserrat'] ">
+          <p className="text-sm sm:text-base lg:text-base xl:text-base leading-relaxed  mt-3 font-[500] p-2  lg:text-justify xl:text-justify font-['Montserrat'] ">
             GENWIN is committed to providing innovative adhesive solutions that
             meet the diverse needs of customers across industries. Every tape we
             produce is engineered to deliver exceptional performance,
@@ -206,7 +206,10 @@ const Footer = () => {
                 </svg>
                 <div className="flex flex-row ">Address</div>
               </div>
-              <p className="flex-initial  ">Noida Sec. 2</p>
+              <p className="flex-initial  ">National auto suppliers 
+                  761/7A  chabi ganj 
+                  Kashmere gate 
+                  Delhi -110006</p>
             </li>
 
             <li className="mb-2 gap-2 flex flex-col   text-start ml-2 ">
@@ -233,7 +236,7 @@ const Footer = () => {
                 </svg>
                 <div className="flex flex-row">Email</div>
               </div>
-              <p className="flex-initial">info@genwinauto.com</p>
+              <p className="flex-initial">contact@genwin-auto.com</p>
             </li>
 
             <li className="mb-2 gap-2 flex flex-col   text-start ml-2">
@@ -260,7 +263,7 @@ const Footer = () => {
                 </svg>
                 <div className="flex flex-row">Phone</div>
               </div>
-              <p className="flex-initial  ">+91-9810331626</p>
+              <p className="flex-initial  ">+91-9717121626</p>
             </li>
           </div>
         </div>

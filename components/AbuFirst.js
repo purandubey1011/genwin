@@ -106,7 +106,7 @@ export default function AbuFirst() {
           </div>
 
           {/* Second Column: Image/Video */}
-          <div className=" relative max-[768px]:bg-[url('/assets/images/bg-m.webp')] bg-cover bg-left pb-10">
+          <div className=" relative hidden md:block max-[768px]:bg-[url('/assets/images/bg-m.webp')] bg-cover bg-left pb-10">
             {/* Image */}
             <div className="z-[2] relative flex justify-center items-center">
               <Image
@@ -173,7 +173,7 @@ export default function AbuFirst() {
             {submitStatus === 'success' ? (
                <div className="text-center py-4">
                  <p className="text-lg text-green-600 font-medium">Thank You!</p>
-                 <p className="text-gray-700 mt-2">We've received your request and will be in touch soon.</p>
+                 <p className="text-gray-700 mt-2">We have received your request and will be in touch soon.</p>
                  <button
                    onClick={closeModal}
                    className="mt-4 bg-primary text-white rounded-md px-5 py-2 hover:bg-opacity-90 transition-colors duration-200"

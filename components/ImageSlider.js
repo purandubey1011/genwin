@@ -33,7 +33,7 @@ const ImageSlider = ({ slides, autoPlay = true, autoPlayInterval = 3000 }) => {
   }, [isTransitioning, slides.length]);
 
   const prevSlide = useCallback(() => {
-    if (isTransitioning) return; // Prevent spamming navigation
+    if (isTransitioning) return; 
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
@@ -72,7 +72,7 @@ const ImageSlider = ({ slides, autoPlay = true, autoPlayInterval = 3000 }) => {
               <div className="w-full lg:w-1/2  space-y-6">
                 {/* Slide Heading */}
                 <h2
-                  className={`${platypi.className} text-[#181818] text-40 small-mobile:text-40 sm:text-40 md:text-40 lg:text-48 xl:text-60 font-[400] mb-4`}
+                  className={`${platypi.className} text-[#181818] text-34 small-mobile:text-40 sm:text-40 md:text-40 lg:text-48 xl:text-60 font-[400] mb-4`}
                 >
                   {slide.heading.split(" ").slice(0, -1).join(" ")}{" "}
                   <span className="text-red-500">
@@ -81,7 +81,7 @@ const ImageSlider = ({ slides, autoPlay = true, autoPlayInterval = 3000 }) => {
                 </h2>
 
                 {/* Slide Content Text */}
-                <p className="text-[#181818] text-16 mb-4 sm:text-16 md:text-16 lg:text-16 xl:text-16 small-mobile:text-16 font-[500]">
+                <p className="text-[#181818] text-14 mb-4 sm:text-16 md:text-16 lg:text-16 xl:text-16 small-mobile:text-16 font-[500]">
                   {slide.content}
                 </p>
 
@@ -139,7 +139,7 @@ const ImageSlider = ({ slides, autoPlay = true, autoPlayInterval = 3000 }) => {
             <img
               src={isMobile ? slide.mobileImage : slide.image}
               alt={`Slide ${index + 1}`}
-              className={`w-full object-cover ${isMobile ? "mt-[500px] ml-[40px]" : ""}`}
+              className={`w-full object-cover ${isMobile ? "mt-[275px] ml-[20%]" : ""}`}
             />
           </picture>
         </div>
