@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${montserrat.className}`}>
       <head>
+      <meta name="google-site-verification" content="rdoMx_ea12EnFUQEH2Vll5LEzumUOaunXgBksKd7cyk" />
       <meta name="viewport" content="initial-scale=1, width=device-width" />
         <title>Genwin</title>
       </head>
