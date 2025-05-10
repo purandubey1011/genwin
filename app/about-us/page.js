@@ -23,7 +23,10 @@ import Newsletter from '@/components/Newsletter';
 import { Platypi } from 'next/font/google';
 
 
-
+export const metadata ={
+  title: 'About Us',
+  description:"Shop transparent double sided tape, thin double sided tape, strong double sided tape & 3M double sided tape alternatives at best double sided tape price "
+}
 
 const platypi = Platypi({
   weight: ['400'],
