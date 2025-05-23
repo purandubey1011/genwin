@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Bars3Icon, PhoneIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import Logo from '../public/assets/images/logo.webp';
+import Logo from '../public/assets/images/logobgremove.png';
 import icon from '../public/assets/images/mobile.svg';
 import icons from '../public/assets/images/gmail.webp';
 // import icons from '../public/assets/images/gmailIcon.svg';

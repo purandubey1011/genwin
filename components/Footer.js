@@ -2,7 +2,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import logoWhite from "../public/assets/images/flogo.png";
+import logoWhite from "../public/assets/images/logobgremove.png";
 import SVG from "../public/assets/images/heading.svg";
 
 const Footer = () => {
