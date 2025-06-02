@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function Newsletter(){
 
 const [email, setEmail] = useState("")
+const [showSuccess, setShowSuccess] = useState(false)
 
 const onSubmit = async (e) => {
     e.preventDefault()
@@ -13,6 +14,8 @@ const onSubmit = async (e) => {
      method: "POST",
      body: JSON.stringify({ email }),
      })
+    setEmail("") 
+    setShowSuccess(true) 
     }
 
 return (
@@ -48,6 +51,20 @@ return (
                 </p>
                 </div>  
             </div>
+            {showSuccess && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 className="text-xl font-bold text-gray-900">Thank you for subscribing!</h3>
+                        <p className="text-gray-600 mt-2">You'll receive our latest updates in your inbox.</p>
+                        <button 
+                            onClick={() => setShowSuccess(false)}
+                            className="mt-4 bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </section>
     );
-}        
+}

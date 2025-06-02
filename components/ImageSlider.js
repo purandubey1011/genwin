@@ -52,7 +52,6 @@ const ImageSlider = ({ slides, autoPlay = true, autoPlayInterval = 3000 }) => {
   
   return (
     <div className="relative overflow-hidden max-w-full mx-auto">
-      {/* Slide Container */}
       <div
         className="relative w-full h-auto flex transition-transform duration-500 ease-in-out"
         style={{
@@ -62,17 +61,13 @@ const ImageSlider = ({ slides, autoPlay = true, autoPlayInterval = 3000 }) => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className="w-full h-full flex-shrink-0 relative flex flex-col md:flex-row items-center"      
+          className="w-full min-h-[65vh] md:h-[60vh] flex-shrink-0 relative flex flex-col-reverse md:flex-row md:items-center justify-center"      
         >
-          
-
-          {/* Slide Content */}
-          <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-start p-6 small-mobile:top-0 sm:top-0 md:top-0 lg:top-24 xl:top-24">
-            <div className="w-full max-w-7xl mx-auto p-0">
-              <div className="w-full lg:w-1/2  space-y-6">
-                {/* Slide Heading */}
+          <div className="w-full md:w-1/2 p-4 md:p-6 order-2 md:order-1">
+            <div className="w-full max-w-7xl mx-auto">
+              <div className="w-full space-y-4 md:space-y-6">
                 <h2
-                  className={`${platypi.className} text-[#181818] text-34 small-mobile:text-40 sm:text-40 md:text-40 lg:text-48 xl:text-60 font-[400] mb-4`}
+                  className={`${platypi.className} text-[#181818] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-[400] mb-2 md:mb-4`}
                 >
                   {slide.heading.split(" ").slice(0, -1).join(" ")}{" "}
                   <span className="text-red-500">
@@ -80,94 +75,54 @@ const ImageSlider = ({ slides, autoPlay = true, autoPlayInterval = 3000 }) => {
                   </span>
                 </h2>
 
-                {/* Slide Content Text */}
-                <p className="text-[#181818] text-14 mb-4 sm:text-16 md:text-16 lg:text-16 xl:text-16 small-mobile:text-16 font-[500]">
+                <p className="text-[#181818] text-sm sm:text-base md:text-lg font-[500] max-w-prose">
                   {slide.content}
                 </p>
-
-                {/* Call-to-Action Button */}
-                {/* {slide.ctaText && (
-                  <div className="flex items-center space-x-4">
-                    <a
-                      href={slide.ctaLink}
-                      className={`bg-[#090909] text-white px-6 py-3 rounded-md hover:bg-[#E52D38] transition duration-300 ${
-                        currentIndex === index ? 'animate-fadeIn opacity-100' : 'opacity-0'
-                      }`}
-                    >
-                      {slide.ctaText}
-                    </a>
-                  </div>
-                )} */}
               </div>
-
-              {/* Small Image and Content */}
-              {/* <div
-                className={`py-6 flex flex-col small-mobile:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row  transition duration-300 justify-start ${
-                  currentIndex === index ? 'animate-fadeUp opacity-100' : 'opacity-0'
-                }`}
-              >
-               <div className='flex flex-row items-center gap-2'>
-               <Image
-                  src={slide.smallImage}
-                  alt={`Small Slide ${index + 1}`}
-                  width={176}
-                  height={65}
-                  className="object-cover rounded-md w-20 small-mobile:text-w-20 sm:w-20 md:w-20 lg:w-40 xl:w-40"
-                />
-                
-                  <span className="block text-14 font-[500] small-mobile:text-14 sm:text-14 md:text-14 lg:text-16 xl:text-16 whitespace-nowrap ">{slide.smallContentF}</span>
-               </div>
-               <div className='flex flex-row items-center gap-2'>
-                 <span className="block  text-primary  font-[platypi] text-20 font-[700] small-mobile:text-20 sm:text-20 md:text-20 lg:text-48  xl:text-48 lg:ml-3 xl:ml-3">
-                    {slide.smallContentS}
-                  </span>
-                  <span className="block text-14 font-[500] small-mobile:text-14 sm:text-14 md:text-14 lg:text-16 xl:text-16 whitespace-nowrap">{slide.smallContentT}</span>
-                </div>
-               
-              </div> */}
             </div>
           </div>
 
-          {/* Main Image with Responsive Handling */}
-          <picture>
-            {/* Define Mobile Image */}
-            <source
-              media="(max-width: 768px)"
-              srcSet={slide.mobileImage}
-            />
-            {/* Default Image for Larger Screens */}
-            <img
-              src={isMobile ? slide.mobileImage : slide.image}
-              alt={`Slide ${index + 1}`}
-              className={`w-full object-cover ${isMobile ? "mt-[275px] ml-[20%]" : ""}`}
-            />
-          </picture>
+          <div className="w-full md:w-1/2 order-1 md:order-2 h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+            <picture className="block w-full h-full relative">
+              <source
+                media="(max-width: 768px)"
+                srcSet={slide.mobileImage}
+              />
+              <img
+                src={isMobile ? slide.mobileImage : slide.image}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-contain md:object-cover absolute inset-0"
+                style={{
+                  maxHeight: isMobile ? '250px' : '100%',
+                  objectPosition: isMobile ? 'center' : 'center right'
+                }}
+              />
+            </picture> 
+          </div>
         </div>
       ))}
-
       </div>
 
       {/* Navigation Buttons */}
       <button
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 px-4 py-1 bg-white text-red-200 rounded-full z-10 hidden lg:block border-[#EBC3C3] border text-3xl"
+          className="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 px-2 md:px-4 py-1 bg-white/80 text-red-200 rounded-full z-10 text-xl md:text-3xl border-[#EBC3C3] border"
           onClick={prevSlide}
         >
           &#10094;
       </button>
       <button
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 px-4 py-1 bg-white text-red-200 rounded-full z-10 hidden lg:block border-[#EBC3C3] border text-3xl"
+          className="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 px-2 md:px-4 py-1 bg-white/80 text-red-200 rounded-full z-10 text-xl md:text-3xl border-[#EBC3C3] border"
           onClick={nextSlide}
         >
           &#10095;
       </button>
 
-
       {/* Dot Navigation */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
               index === currentIndex ? 'bg-primary' : 'bg-gray-500'
             }`}
             onClick={() => setCurrentIndex(index)}

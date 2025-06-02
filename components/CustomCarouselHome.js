@@ -33,7 +33,7 @@ const CustomCarouselHome = ({ slides = [] }) => {
        {slides.map((slide, index) => (
         <div
           key={index}
-          className="relative group overflow-hidden rounded-xl " 
+          className="relative bg-[#FFCACA] group overflow-hidden rounded-xl " 
         >
           {/* Slide Image */}
           <div className="relative overflow-hidden rounded-xl group-hover:border-[#EE313C] group-hover:border transition-all duration-500 ease-in-out select-none">
@@ -49,7 +49,7 @@ const CustomCarouselHome = ({ slides = [] }) => {
 
             {/* Gradient Overlay */}
             <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              className="absolute inset-0 opacity-0  group-hover:opacity-100 transition-opacity duration-500"
               style={{
                 background:
                   "linear-gradient(180deg, rgba(255, 203, 203, 0.10) 33.7%, rgba(149, 41, 47, 0.83) 79.18%, rgba(123, 3, 10, 0.86) 99.45%)",
