@@ -91,8 +91,9 @@ const ImageSlider = ({ slides, autoPlay = true, autoPlayInterval = 3000 }) => {
               <img
                 src={isMobile ? slide.mobileImage : slide.image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-contain md:object-cover absolute inset-0"
+                className={`w-full h-full object-contain md:object-cover absolute  inset-0`}
                 style={{
+                  marginLeft:  isMobile && index=== 0 ? "20vw" : 'auto',
                   maxHeight: isMobile ? '250px' : '100%',
                   objectPosition: isMobile ? 'center' : 'center right'
                 }}
