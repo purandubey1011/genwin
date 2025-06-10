@@ -8,7 +8,7 @@ import ListingSlider from '../components/ListingSlider';
 import Partners from '../components/Partners';
 import Testimonials from '../components/Testimonials';
 import BlockSlider from '@/components/BlockSlider';
-import p1 from '../public/assets/images/1.webp';
+import p1 from '../public/assets/images/p1.png';
 import p2 from '../public/assets/images/2.webp';
 import p3 from '../public/assets/images/clear3.png';
 import p4 from '../public/assets/images/4.webp';
